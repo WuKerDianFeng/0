@@ -18,9 +18,9 @@ basic.forever(function () {
     basic.clearScreen()
     // 預計會開燈，增加溫度
     if (溫度 < 27) {
-        pins.digitalWritePin(DigitalPin.P3, 1)
+        pins.analogWritePin(AnalogPin.P3, 0)
     } else {
-        pins.digitalWritePin(DigitalPin.P3, 0)
+        pins.analogWritePin(AnalogPin.P3, 1023)
     }
     basic.clearScreen()
 })
