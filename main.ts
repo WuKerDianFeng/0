@@ -15,12 +15,13 @@ basic.forever(function () {
     basic.clearScreen()
     basic.showString("TEMP")
     basic.showNumber(溫度)
+    basic.clearScreen()
     // 預計會開燈，增加溫度
     if (溫度 < 27) {
-        pins.digitalWritePin(DigitalPin.P3, 1)
+        pins.servoWritePin(AnalogPin.P3, 1)
         basic.showIcon(IconNames.No)
     } else {
-        pins.digitalWritePin(DigitalPin.P3, 0)
+        pins.servoWritePin(AnalogPin.P3, 0)
         basic.showIcon(IconNames.Yes)
     }
     basic.clearScreen()
