@@ -17,7 +17,7 @@ basic.forever(function () {
     basic.showNumber(溫度)
     basic.clearScreen()
     // 預計會開燈，增加溫度
-    if (溫度 < 10) {
+    if (溫度 < 30) {
         // 控制紅燈
         pins.analogWritePin(AnalogPin.P2, 0)
     } else {
