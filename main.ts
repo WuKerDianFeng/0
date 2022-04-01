@@ -8,9 +8,9 @@ basic.forever(function () {
     basic.clearScreen()
     if (濕度 < 500) {
         pins.servoWritePin(AnalogPin.P16, 90)
-        basic.pause(5000)
+        basic.pause(500)
         pins.servoWritePin(AnalogPin.P16, 0)
-        basic.pause(5000)
+        basic.pause(500)
     }
     basic.clearScreen()
     basic.showString("TEMP")
@@ -19,10 +19,9 @@ basic.forever(function () {
     // 預計會開燈，增加溫度
     if (溫度 < 10) {
         // 控制紅燈
-        // 
         pins.analogWritePin(AnalogPin.P2, 0)
     } else {
-        // 控制蘭登
+        // 控制藍燈
         pins.analogWritePin(AnalogPin.P1, 0)
     }
     basic.clearScreen()
