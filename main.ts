@@ -1,21 +1,21 @@
 let 溫度 = 0
 let 濕度 = 0
 basic.forever(function () {
+    lcd1602.setAddress(
+    lcd1602.I2C_ADDR.addr1
+    )
     溫度 = input.temperature()
     濕度 = pins.analogReadPin(AnalogPin.P10)
-    basic.showString("HUMI")
-    basic.showNumber(濕度)
-    basic.clearScreen()
+    lcd1602.putString("HUMI", 0, 0)
+    lcd1602.putNumber(濕度, 0, 1)
     if (濕度 < 500) {
         pins.servoWritePin(AnalogPin.P16, 90)
-        basic.pause(500)
+        basic.pause(1000)
         pins.servoWritePin(AnalogPin.P16, 0)
-        basic.pause(500)
+        basic.pause(1000)
     }
-    basic.clearScreen()
-    basic.showString("TEMP")
-    basic.showNumber(溫度)
-    basic.clearScreen()
+    lcd1602.putString("TEMP", 5, 0)
+    lcd1602.putNumber(溫度, 5, 1)
     // 預計會開燈，增加溫度
     if (溫度 < 30) {
         // 控制紅燈
@@ -24,5 +24,4 @@ basic.forever(function () {
         // 控制藍燈
         pins.analogWritePin(AnalogPin.P1, 0)
     }
-    basic.clearScreen()
 })
