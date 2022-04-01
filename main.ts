@@ -1,5 +1,9 @@
-let 濕度 = 0
 let 溫度 = 0
+let 濕度 = 0
+lcd1602.putString("HUMI", 0, 0)
+lcd1602.putNumber(濕度, 0, 1)
+lcd1602.putString("TEMP", 5, 0)
+lcd1602.putNumber(溫度, 5, 1)
 loops.everyInterval(10000, function () {
     lcd1602.putString("HUMI", 0, 0)
     lcd1602.putNumber(濕度, 0, 1)
