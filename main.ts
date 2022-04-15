@@ -16,7 +16,7 @@ basic.forever(function () {
     if (濕度 < 300) {
         pins.servoWritePin(AnalogPin.P16, 170)
         basic.pause(1000)
-        pins.servoWritePin(AnalogPin.P16, 30)
+        pins.servoWritePin(AnalogPin.P16, 45)
         basic.pause(1000)
     }
     // 預計會開燈，增加溫度
