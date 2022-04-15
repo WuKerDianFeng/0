@@ -12,7 +12,7 @@ basic.forever(function () {
     lcd1602.I2C_ADDR.addr1
     )
     溫度 = input.temperature()
-    濕度 = pins.analogReadPin(AnalogPin.P10)
+    濕度 = pins.analogReadPin(AnalogPin.P3)
     if (濕度 < 300) {
         pins.servoWritePin(AnalogPin.P16, 170)
         basic.pause(1000)
